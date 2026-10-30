@@ -97,6 +97,8 @@ namespace {
         { true, 16, 8, false },
         { true, 24, 12, false },
         { true, 32, 16, false },
+        { true, 64, 32, false },
+        { true, 128, 64, false },
         { true, 0, 0, true },
         { false, 0, 0, false },
     };
