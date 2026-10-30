@@ -3,7 +3,7 @@
 	"gd": {
 		"win": "2.2081"
 	},
-	"version": "v2.0.0",
+	"version": "v2.0.1",
 	"id": "ai.predictivebuffer",
 	"name": "Predictive Input Buffer",
 	"developer": "lilWC",
@@ -15,7 +15,7 @@
 			"description": "Max delay for the CUSTOM F6 stage, all modes except wave. 4 ticks = 1 frame at 60fps.",
 			"default": 40,
 			"min": 1,
-			"max": 64
+			"max": 256
 		},
 		"custom-wave-ticks": {
 			"type": "int",
@@ -23,15 +23,15 @@
 			"description": "Max delay for the CUSTOM F6 stage while in wave.",
 			"default": 20,
 			"min": 0,
-			"max": 64
+			"max": 256
 		},
 		"sim-budget-ms": {
 			"type": "float",
 			"name": "Prediction time budget (ms)",
 			"description": "Max time spent predicting per click. Higher = finds longer saves on big windows, but may hitch on dense levels.",
-			"default": 4.0,
+			"default": 15.0,
 			"min": 1.0,
-			"max": 30.0
+			"max": 60.0
 		},
 		"smart-prediction": {
 			"type": "bool",
