@@ -524,7 +524,7 @@ namespace {
             return std::chrono::duration<double, std::milli>(clock::now() - start).count() > buf.budgetMs;
         };
 
-        int target = anyWave ? base + 10 : std::min(horizon, base + 12);
+        int target = horizon;  // only accept delays that fully survive
         int gain = 6;
         for (int k = 1; k <= maxDelay; ++k) {
             SimEnd end;
@@ -535,7 +535,7 @@ namespace {
             }
             bool good;
             if (anyWave) {
-                good = ret < horizon ? ret >= target : (ret - base >= gain || ret >= target);
+                good = ret >= horizon;
                 target += 2;
                 gain += 2;
             }
